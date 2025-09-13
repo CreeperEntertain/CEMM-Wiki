@@ -42,6 +42,7 @@
         oldScript.replaceWith(newScript);
     }
 
+    console.log('Yo');
     // Remove the main script tag
     scriptTag.remove();
 })();
