@@ -31,13 +31,23 @@
     scriptTag.insertAdjacentHTML('beforebegin', html);
 
     // Re-execute any <script src> tags inside inserted HTML
-    for (const oldScript of [...scriptTag.parentElement.querySelectorAll('script[src]')]) {
+    const host = window.location.hostname;
+    const isLocal = (host === "localhost" || host === "127.0.0.1");
+
+    for (const oldScript of [...scriptTag.parentElement.querySelectorAll("script[src]")]) {
         if (oldScript === scriptTag) continue;
 
-        const newScript = document.createElement('script');
+        const newScript = document.createElement("script");
+
         for (const { name, value } of oldScript.attributes) {
-            newScript.setAttribute(name, value);
+            // If we're on web, and it's the 'src' attribute, prepend the path
+            if (!isLocal && name === "src") {
+                newScript.setAttribute(name, "../CEMM-Wiki/" + value);
+            } else {
+                newScript.setAttribute(name, value);
+            }
         }
+
         newScript.textContent = oldScript.textContent;
         oldScript.replaceWith(newScript);
     }
