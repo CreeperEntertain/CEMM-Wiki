@@ -1,0 +1,12 @@
+.footer
+{
+    transition: 2s;
+}
+#SF:checked ~ .footer
+{
+    height: fit-content;
+}
+#SF:not(:checked) ~ .footer
+{
+    height: 20px;
+}

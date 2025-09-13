@@ -1,0 +1,57 @@
+#spread-right-animation > div
+{
+    transition: 500ms;
+    width: 0px;
+}
+#spread-right-animation:hover > div
+{
+    width: 300px;
+}
+
+.card-hover
+{
+    transition: 0.2s;
+    transform: translateY(0px) scale(1);
+}
+.card-hover:hover
+{
+    transform: translateY(-10px) scale(1);
+}
+.card-hover:active
+{
+    transform: translateY(-10px) scale(.95);
+}
+
+.letter-hover
+{
+    transition: 0.2s;
+    transform: translateY(0px) scale(1);
+}
+.letter-hover:hover
+{
+    transform: translateY(-5px) scale(1);
+}
+.letter-hover:active
+{
+    transform: translateY(-5px) scale(.9);
+}
+
+.tab-hover > div > h1
+{
+    transition: 0.2s;
+    margin-left: 0px;
+}
+.tab-hover:hover > div > h1
+{
+    margin-left: 30px;
+}
+
+.button-hover
+{
+    transition: 0.2s;
+    transform: translateY(0px);
+}
+.button-hover:hover
+{
+    transform: translateY(-10px);
+}

@@ -1,0 +1,21 @@
+.header-hover
+{
+    transition: 0.5s;
+    transform: translateY(-70px);
+}
+.header-hover:hover
+{
+    transform: translateY(0px);
+}
+
+.header-button
+{
+    transition: 0.2s;
+    background-color: white;
+    color: black;
+}
+.header-button:hover
+{
+    background-color: black;
+    color: white;
+}

@@ -1,0 +1,44 @@
+html
+{
+    scroll-behavior: smooth;
+}
+html, body
+{
+    margin: 0;
+    width: 100vw;
+}
+a
+{
+    text-decoration: none;
+}
+input
+{
+    display: none;
+}
+
+.lexend
+{
+    font-family: Lexend;
+}
+.text
+{
+    color: white;
+    margin: 0
+}
+.text-d
+{
+    color: #242433;
+    margin: 0;
+}
+.t-regular
+{
+    font-family: Lexend;
+    font-size: large;
+    font-weight: 300;
+}
+.t-large
+{
+    font-family: Lexend;
+    font-size: x-large;
+    font-weight: 300;
+}

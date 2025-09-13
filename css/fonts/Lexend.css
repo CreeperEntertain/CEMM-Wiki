@@ -1,0 +1,87 @@
+/* Regular */
+@font-face {
+    font-family: 'Lexend';
+    src: url('../../fonts/Lexend/woff2/Lexend-Regular.woff2'),
+         url('../../fonts/Lexend/woff/Lexend-Regular.woff'),
+         url('../../fonts/Lexend/ttf/Lexend-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Thin */
+@font-face
+{
+    font-family: 'Lexend';
+    src: url('../../fonts/Lexend/woff2/Lexend-Thin.woff2'),
+         url('../../fonts/Lexend/woff/Lexend-Thin.woff'),
+         url('../../fonts/Lexend/ttf/Lexend-Thin.ttf');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Extra Light */
+@font-face {
+    font-family: 'Lexend';
+    src: url('../../fonts/Lexend/woff2/Lexend-ExtraLight.woff2'),
+         url('../../fonts/Lexend/woff/Lexend-ExtraLight.woff'),
+         url('../../fonts/Lexend/ttf/Lexend-ExtraLight.ttf');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Light */
+@font-face {
+    font-family: 'Lexend';
+    src: url('../../fonts/Lexend/woff2/Lexend-Light.woff2'),
+         url('../../fonts/Lexend/woff/Lexend-Light.woff'),
+         url('../../fonts/Lexend/ttf/Lexend-Light.ttf');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Medium */
+@font-face {
+    font-family: 'Lexend';
+    src: url('../../fonts/Lexend/woff2/Lexend-Medium.woff2'),
+         url('../../fonts/Lexend/woff/Lexend-Medium.woff'),
+         url('../../fonts/Lexend/ttf/Lexend-Medium.ttf');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Semi Bold */
+@font-face {
+    font-family: 'Lexend';
+    src: url('../../fonts/Lexend/woff2/Lexend-SemiBold.woff2'),
+         url('../../fonts/Lexend/woff/Lexend-SemiBold.woff'),
+         url('../../fonts/Lexend/ttf/Lexend-SemiBold.ttf');
+    font-weight: 600;
+    font-display: swap;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'Lexend';
+    src: url('../../fonts/Lexend/woff2/Lexend-Bold.woff2'),
+         url('../../fonts/Lexend/woff/Lexend-Bold.woff'),
+         url('../../fonts/Lexend/ttf/Lexend-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Black */
+@font-face {
+    font-family: 'Lexend';
+    src: url('../../fonts/Lexend/woff2/Lexend-Black.woff2'),
+         url('../../fonts/Lexend/woff/Lexend-Black.woff'),
+         url('../../fonts/Lexend/ttf/Lexend-Black.ttf');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}

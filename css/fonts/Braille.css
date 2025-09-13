@@ -1,0 +1,10 @@
+/* Regular */
+@font-face {
+    font-family: 'Braille';
+    src: url('../../fonts/Braille/woff2/Braille.woff2'),
+         url('../../fonts/Braille/woff/Braille.woff'),
+         url('../../fonts/Braille/ttf/Braille.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
