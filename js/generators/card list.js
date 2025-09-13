@@ -2,12 +2,12 @@
     const scriptTag = document.currentScript;
     const charFilter = (scriptTag.dataset.char || '').toUpperCase();
     const objectType = scriptTag.dataset.type;
-    const fetchedList = '../../json/' + objectType + '.json';
+    const fetchedList = '../json/' + objectType + '.json';
 
     // Fetch JSON and template concurrently
     const [items, template] = await Promise.all([
         fetch(fetchedList).then(res => res.json()),
-        fetch('../templates/card.html').then(res => res.text())
+        fetch('templates/generated/card.html').then(res => res.text())
     ]);
 
     // Generate HTML for filtered items

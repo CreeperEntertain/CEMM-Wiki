@@ -1,12 +1,12 @@
 (async () => {
     const scriptTag = document.currentScript;
     const objectType = scriptTag.dataset.type;
-    const fetchedList = '../../json/' + objectType + '.json';
+    const fetchedList = '../json/' + objectType + '.json';
 
     // Fetch items and section template concurrently
     const [itemsResponse, templateResponse] = await Promise.all([
         fetch(fetchedList),
-        fetch('../templates/section.html')
+        fetch('templates/generated/footer letter.html')
     ]);
 
     const items = (await itemsResponse.json()).sort((a, b) => a.localeCompare(b));
@@ -21,9 +21,8 @@
             currentLetter = firstLetter;
 
             html += sectionTemplate
-                .replace(/PLACEHOLDER_TYPE/g, objectType)
                 .replace(/PLACEHOLDER_LOWER/g, currentLetter.toLowerCase())
-                .replace(/PLACEHOLDER_TITLE/g, currentLetter) + '\n';
+                .replace(/PLACEHOLDER_UPPER/g, currentLetter) + '\n';
         }
     }
 
