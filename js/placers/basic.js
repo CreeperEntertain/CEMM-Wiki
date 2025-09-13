@@ -10,16 +10,23 @@
     scriptTag.insertAdjacentHTML('beforebegin', html);
 
     // Re-execute any <script> tags inside the inserted HTML
-    const insertedScripts = [...scriptTag.parentElement.querySelectorAll('script[src], script:not([src])')];
-    for (const oldScript of insertedScripts) {
+    const host = window.location.hostname;
+    const isLocal = (host === "localhost" || host === "127.0.0.1");
+    for (const oldScript of [...scriptTag.parentElement.querySelectorAll("script[src]")]) {
         if (oldScript === scriptTag) continue;
-
-        const newScript = document.createElement('script');
-        // Copy attributes
+        const newScript = document.createElement("script");
         for (const { name, value } of oldScript.attributes) {
-            newScript.setAttribute(name, value);
+            if (!isLocal && name === "src") {
+                let newValue = value;
+                // Only prepend if it doesn't already start with "CEMM-Wiki/"
+                if (!newValue.startsWith("CEMM-Wiki/")) {
+                    newValue = "CEMM-Wiki/" + newValue;
+                }
+                newScript.setAttribute(name, newValue);
+            } else {
+                newScript.setAttribute(name, value);
+            }
         }
-        // Copy inline content if present
         newScript.textContent = oldScript.textContent;
         oldScript.replaceWith(newScript);
     }
