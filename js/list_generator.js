@@ -1,11 +1,13 @@
 (async () => {
     const scriptTag = document.currentScript;
     const charFilter = (scriptTag.dataset.char || '').toUpperCase();
+    const objectType = scriptTag.dataset.type;
+    const fetchedList = '../../json/' + objectType + '.json';
 
     // Fetch JSON and template concurrently
     const [items, template] = await Promise.all([
-        fetch('../../json/items.json').then(res => res.json()),
-        fetch('card_template.html').then(res => res.text())
+        fetch(fetchedList).then(res => res.json()),
+        fetch('../templates/card.html').then(res => res.text())
     ]);
 
     // Generate HTML for filtered items
@@ -17,7 +19,8 @@
             return template
                 .replace(/PLACEHOLDER_LOWERCASE/g, lowercase)
                 .replace(/PLACEHOLDER_UNDERSCORE/g, underscore)
-                .replace(/PLACEHOLDER_TITLE/g, item);
+                .replace(/PLACEHOLDER_TITLE/g, item)
+                .replace(/PLACEHOLDER_TYPE/g, objectType);
         })
         .join('');
 
