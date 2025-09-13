@@ -1,10 +1,15 @@
 (async () => {
     const scriptTag = document.currentScript;
     const htmlRef = scriptTag.dataset.template;
+    const objectType = scriptTag.dataset.type;
 
     // Fetch the HTML file (just one, no replacements)
     const htmlResponse = await fetch('templates/placed/' + htmlRef + '.html');
-    const html = await htmlResponse.text();
+    const sectionTemplate = await htmlResponse.text();
+
+    let html = '';
+
+    html += sectionTemplate.replace(/PLACEHOLDER_TYPE/g, objectType);
 
     // Insert the HTML before the current script tag
     scriptTag.insertAdjacentHTML('beforebegin', html);
