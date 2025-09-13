@@ -2,6 +2,8 @@
     const scriptTag = document.currentScript;
     const objectType = scriptTag.dataset.type;
     const fetchedList = '../json/' + objectType + '.json';
+    const host = window.location.hostname;
+    const isLocal = (host === "localhost" || host === "127.0.0.1");
 
     // Fetch items and section template concurrently
     const [itemsResponse, templateResponse] = await Promise.all([
@@ -22,7 +24,8 @@
 
             html += sectionTemplate
                 .replace(/PLACEHOLDER_TYPE/g, objectType)
-                .replace(/PLACEHOLDER_LOWER/g, currentLetter.toLowerCase())
+                .replace(/PLACEHOLDER_LOWER/g, currentLetter.toLowerCase()),
+                .replace(/PLACEHODLER_ROOT/g, )
                 .replace(/PLACEHOLDER_TITLE/g, currentLetter) + '\n';
         }
     }
@@ -31,8 +34,6 @@
     scriptTag.insertAdjacentHTML('beforebegin', html);
 
     // Re-execute any <script src> tags inside inserted HTML
-    const host = window.location.hostname;
-    const isLocal = (host === "localhost" || host === "127.0.0.1");
     for (const oldScript of [...scriptTag.parentElement.querySelectorAll("script[src]")]) {
         if (oldScript === scriptTag) continue;
         const newScript = document.createElement("script");
