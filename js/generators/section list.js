@@ -53,5 +53,5 @@
     }
 
     // Remove the main script tag
-    scriptTag.remove();
+    //scriptTag.remove();
 })();
