@@ -16,7 +16,16 @@
         if (oldScript === scriptTag) continue;
         const newScript = document.createElement("script");
         for (const { name, value } of oldScript.attributes) {
-            newScript.setAttribute(name, value);
+            if (!isLocal && name === "src") {
+                let newValue = value;
+                // Only prepend if it doesn't already start with "CEMM-Wiki/"
+                if (!newValue.startsWith("CEMM-Wiki/")) {
+                    newValue = "CEMM-Wiki/" + newValue;
+                }
+                newScript.setAttribute(name, newValue);
+            } else {
+                newScript.setAttribute(name, value);
+            }
         }
         newScript.textContent = oldScript.textContent;
         oldScript.replaceWith(newScript);
