@@ -41,28 +41,29 @@
         const container = document.createElement('div');
         container.innerHTML = html;
 
-        // Execute any <script> inside inserted HTML
+        // Insert container into the DOM before the main script tag
+        scriptTag.insertAdjacentElement('beforebegin', container);
+
+        // Replace and execute any <script> tags inside the container safely
         container.querySelectorAll('script').forEach(oldScript => {
             const newScript = document.createElement('script');
-            // Copy attributes
+
+            // Copy all attributes
             for (const { name, value } of oldScript.attributes) {
                 newScript.setAttribute(name, value);
             }
 
             if (oldScript.src) {
-                // Resolve relative src URLs
+                // Resolve relative src URLs correctly
                 newScript.src = new URL(oldScript.src, window.location.href).href;
             } else {
                 newScript.textContent = oldScript.textContent;
             }
 
-            document.body.appendChild(newScript);
+            oldScript.replaceWith(newScript); // Replace inline or src script
         });
 
-        // Insert the container into the DOM before the main script tag
-        scriptTag.insertAdjacentElement('beforebegin', container);
-
-        // Remove the main script tag
+        // Remove the main generator script
         scriptTag.remove();
 
     } catch (err) {
