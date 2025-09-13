@@ -2,68 +2,70 @@
     const scriptTag = document.currentScript;
     const objectType = scriptTag.dataset.type;
 
-    // Base path relative to GitHub Pages repo
-    const repoBase = window.location.pathname.replace(/\/[^\/]*$/, '/');
-    const fetchedList = new URL(`../json/${objectType}.json`, window.location.origin + repoBase).href;
-    const templatePath = new URL('templates/generated/section.html', window.location.origin + repoBase).href;
+    // Base URL of your repo on GitHub Pages
+    const repoBase = '/CEMM-Wiki/';
 
-    // Fetch items and template concurrently
-    const [itemsResponse, templateResponse] = await Promise.all([
-        fetch(fetchedList),
-        fetch(templatePath)
-    ]);
+    // Correct paths to JSON and template
+    const fetchedList = repoBase + 'json/' + objectType + '.json';
+    const templatePath = repoBase + 'templates/generated/section.html';
 
-    if (!itemsResponse.ok) {
-        console.error('Failed to fetch JSON:', itemsResponse.status);
-        return;
-    }
+    try {
+        // Fetch items and template concurrently
+        const [itemsResponse, templateResponse] = await Promise.all([
+            fetch(fetchedList),
+            fetch(templatePath)
+        ]);
 
-    if (!templateResponse.ok) {
-        console.error('Failed to fetch template:', templateResponse.status);
-        return;
-    }
+        if (!itemsResponse.ok) throw new Error('Failed to fetch JSON: ' + itemsResponse.status);
+        if (!templateResponse.ok) throw new Error('Failed to fetch template: ' + templateResponse.status);
 
-    const items = (await itemsResponse.json()).sort((a, b) => a.localeCompare(b));
-    const sectionTemplate = await templateResponse.text();
+        const items = (await itemsResponse.json()).sort((a, b) => a.localeCompare(b));
+        const sectionTemplate = await templateResponse.text();
 
-    let currentLetter = '';
-    let html = '';
+        let currentLetter = '';
+        let html = '';
 
-    for (const item of items) {
-        const firstLetter = item[0].toUpperCase();
-        if (firstLetter !== currentLetter) {
-            currentLetter = firstLetter;
+        for (const item of items) {
+            const firstLetter = item[0].toUpperCase();
+            if (firstLetter !== currentLetter) {
+                currentLetter = firstLetter;
 
-            html += sectionTemplate
-                .replace(/PLACEHOLDER_TYPE/g, objectType)
-                .replace(/PLACEHOLDER_LOWER/g, currentLetter.toLowerCase())
-                .replace(/PLACEHOLDER_TITLE/g, currentLetter) + '\n';
-        }
-    }
-
-    // Insert generated HTML before the script tag
-    scriptTag.insertAdjacentHTML('beforebegin', html);
-
-    // Re-execute <script> tags inside inserted HTML
-    const insertedScripts = [...scriptTag.parentElement.querySelectorAll('script')].filter(s => s !== scriptTag);
-    for (const oldScript of insertedScripts) {
-        const newScript = document.createElement('script');
-
-        // Copy all attributes
-        for (const { name, value } of oldScript.attributes) {
-            newScript.setAttribute(name, value);
+                html += sectionTemplate
+                    .replace(/PLACEHOLDER_TYPE/g, objectType)
+                    .replace(/PLACEHOLDER_LOWER/g, currentLetter.toLowerCase())
+                    .replace(/PLACEHOLDER_TITLE/g, currentLetter) + '\n';
+            }
         }
 
-        if (oldScript.src) {
-            // Ensure relative src resolves correctly
-            newScript.src = new URL(oldScript.src, window.location.href).href;
-        } else {
-            newScript.textContent = oldScript.textContent;
-        }
+        // Create a container for the generated HTML
+        const container = document.createElement('div');
+        container.innerHTML = html;
 
-        oldScript.replaceWith(newScript);
+        // Execute any <script> inside inserted HTML
+        container.querySelectorAll('script').forEach(oldScript => {
+            const newScript = document.createElement('script');
+            // Copy attributes
+            for (const { name, value } of oldScript.attributes) {
+                newScript.setAttribute(name, value);
+            }
+
+            if (oldScript.src) {
+                // Resolve relative src URLs
+                newScript.src = new URL(oldScript.src, window.location.href).href;
+            } else {
+                newScript.textContent = oldScript.textContent;
+            }
+
+            document.body.appendChild(newScript);
+        });
+
+        // Insert the container into the DOM before the main script tag
+        scriptTag.insertAdjacentElement('beforebegin', container);
+
+        // Remove the main script tag
+        scriptTag.remove();
+
+    } catch (err) {
+        console.error('Error loading items:', err);
     }
-
-    // Remove the main script tag
-    scriptTag.remove();
 })();
