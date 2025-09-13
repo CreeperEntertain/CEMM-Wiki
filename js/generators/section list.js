@@ -42,7 +42,7 @@
         for (const { name, value } of oldScript.attributes) {
             // If we're on web, and it's the 'src' attribute, prepend the path
             if (!isLocal && name === "src") {
-                newScript.setAttribute(name, "../CEMM-Wiki/" + value);
+                newScript.setAttribute(name, "CEMM-Wiki/" + value);
             } else {
                 newScript.setAttribute(name, value);
             }
