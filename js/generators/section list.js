@@ -30,26 +30,17 @@
     // Insert generated HTML before the script tag
     scriptTag.insertAdjacentHTML('beforebegin', html);
 
-// Re-execute any <script src> tags inside inserted HTML
-for (const oldScript of [...scriptTag.parentElement.querySelectorAll('script[src]')]) {
-    if (oldScript === scriptTag) continue;
+    // Re-execute any <script src> tags inside inserted HTML
+    for (const oldScript of [...scriptTag.parentElement.querySelectorAll('script[src]')]) {
+        if (oldScript === scriptTag) continue;
 
-    const newScript = document.createElement('script');
-
-    // Copy all attributes
-    for (const { name, value } of oldScript.attributes) {
-        newScript.setAttribute(name, value);
+        const newScript = document.createElement('script');
+        for (const { name, value } of oldScript.attributes) {
+            newScript.setAttribute(name, value);
+        }
+        newScript.textContent = oldScript.textContent;
+        oldScript.replaceWith(newScript);
     }
-
-    // Resolve src relative to current page location
-    if (oldScript.src) {
-        const resolvedSrc = new URL(oldScript.getAttribute('src'), window.location.href);
-        newScript.src = resolvedSrc.href;
-    }
-
-    newScript.textContent = oldScript.textContent;
-    oldScript.replaceWith(newScript);
-}
 
     // Remove the main script tag
     scriptTag.remove();
