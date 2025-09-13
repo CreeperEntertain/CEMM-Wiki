@@ -30,30 +30,26 @@
     // Insert generated HTML before the script tag
     scriptTag.insertAdjacentHTML('beforebegin', html);
 
-    // Fix resource paths (scripts, images, etc.)
+    // Re-execute any <script src> tags inside inserted HTML
     const host = window.location.hostname;
     const isLocal = (host === "localhost" || host === "127.0.0.1");
-
-    // Select all elements with a src attribute (script, img, iframe, etc.)
-    const elementsWithSrc = scriptTag.parentElement.querySelectorAll("[src]");
-
-    for (const el of elementsWithSrc) {
-        if (el === scriptTag) continue;
-
-        const srcValue = el.getAttribute("src");
-        if (!isLocal && srcValue && !srcValue.startsWith("CEMM-Wiki/")) {
-            el.setAttribute("src", "CEMM-Wiki/" + srcValue);
-        }
-
-        // Special handling for <script>: reload it to ensure execution
-        if (el.tagName.toLowerCase() === "script") {
-            const newScript = document.createElement("script");
-            for (const { name, value } of el.attributes) {
+    for (const oldScript of [...scriptTag.parentElement.querySelectorAll("script[src]")]) {
+        if (oldScript === scriptTag) continue;
+        const newScript = document.createElement("script");
+        for (const { name, value } of oldScript.attributes) {
+            if (!isLocal && name === "src") {
+                let newValue = value;
+                // Only prepend if it doesn't already start with "CEMM-Wiki/"
+                if (!newValue.startsWith("CEMM-Wiki/")) {
+                    newValue = "CEMM-Wiki/" + newValue;
+                }
+                newScript.setAttribute(name, newValue);
+            } else {
                 newScript.setAttribute(name, value);
             }
-            newScript.textContent = el.textContent;
-            el.replaceWith(newScript);
         }
+        newScript.textContent = oldScript.textContent;
+        oldScript.replaceWith(newScript);
     }
 
     // Remove the main script tag
