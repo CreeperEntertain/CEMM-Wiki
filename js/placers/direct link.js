@@ -7,7 +7,7 @@
     const isLocal = (host === "localhost" || host === "127.0.0.1");
 
     // Fetch the HTML file (just one, no replacements)
-    const htmlResponse = await fetch(isLocal ? htmlRef : 'CEMM-Wiki/' + htmlRef);
+    const htmlResponse = await fetch(isLocal ? htmlRef : 'CEMM-Wiki/../' + htmlRef);
     const sectionTemplate = await htmlResponse.text();
 
     let html = '';
