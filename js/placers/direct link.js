@@ -15,7 +15,8 @@
 
     html += sectionTemplate
         .replace(/PLACEHOLDER_TYPE/g, objectType)
-        .replace(/PLACEHOLDER_ROOT/g, 'PLACEHOLDER_ROOT/../');
+        .replace(/PLACEHOLDER_ROOT/g, isLocal ? '' : 'CEMM-Wiki/');
+    console.debug(html);
 
     // Insert the HTML before the current script tag
     scriptTag.insertAdjacentHTML('beforebegin', html);
