@@ -7,12 +7,14 @@
     const isLocal = (host === "localhost" || host === "127.0.0.1");
 
     // Fetch the HTML file (just one, no replacements)
-    const htmlResponse = await fetch(isLocal ? htmlRef : 'CEMM-Wiki/../' + htmlRef);
+    const htmlResponse = await fetch(htmlRef);
     const sectionTemplate = await htmlResponse.text();
 
     let html = '';
 
-    html += sectionTemplate.replace(/PLACEHOLDER_TYPE/g, objectType);
+    html += sectionTemplate
+        .replace(/PLACEHOLDER_TYPE/g, objectType)
+        .replace(/PLACEHOLDER_ROOR/g, isLocal ? '' : 'CEMM-Wiki/');
 
     // Insert the HTML before the current script tag
     scriptTag.insertAdjacentHTML('beforebegin', html);
