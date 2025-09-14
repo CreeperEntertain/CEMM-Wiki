@@ -14,9 +14,7 @@
     let html = '';
 
     html += sectionTemplate.replace(/PLACEHOLDER_TYPE/g, objectType);
-    
-    html = html.replace(/PLACEHOLDER_ROOT/g, isLocal ? '' : '/CEMM-Wiki/');
-    console.debug(html);
+    html = html.replace(/PLACEHOLDER_ROOT/g, isLocal ? '/' : '/CEMM-Wiki/');
 
     // Insert the HTML before the current script tag
     scriptTag.insertAdjacentHTML('beforebegin', html);
