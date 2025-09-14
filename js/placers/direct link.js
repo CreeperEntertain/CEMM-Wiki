@@ -3,6 +3,8 @@
     const htmlRef = scriptTag.dataset.template;
     const objectType = scriptTag.dataset.type;
     const displayText = scriptTag.dataset.text;
+    const pageLink = scriptTag.dataset.link;
+    const iconLink = scriptTag.dataset.icon;
 
     const host = window.location.hostname;
     const isLocal = (host === "localhost" || host === "127.0.0.1");
@@ -16,6 +18,8 @@
     html += sectionTemplate.replace(/PLACEHOLDER_TYPE/g, objectType);
     html = html.replace(/PLACEHOLDER_ROOT/g, isLocal ? '/' : '/CEMM-Wiki/');
     html = html.replace(/PLACEHOLDER_TEXT/g, displayText);
+    html = html.replace(/PLACEHOLDER_LINK/g, pageLink);
+    html = html.replace(/PLACEHOLDER_ICON/g, iconLink);
 
     // Insert the HTML before the current script tag
     scriptTag.insertAdjacentHTML('beforebegin', html);
