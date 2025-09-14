@@ -2,7 +2,6 @@
     const scriptTag = document.currentScript;
     const htmlRef = scriptTag.dataset.template;
     const objectType = scriptTag.dataset.type;
-    const fileDepth = scriptTag.dataset.filedepth;
     
     const host = window.location.hostname;
     const isLocal = (host === "localhost" || host === "127.0.0.1");
@@ -13,11 +12,9 @@
 
     let html = '';
 
-    html += sectionTemplate.replace(/PLACEHOLDER_TYPE/g, objectType);
-    for (let i = fileDepth; i > 0; i--) {
-        html = html.replace(/PLACEHOLDER_ROOT/g, 'PLACEHOLDER_ROOT/../');
-    }
-    html = html.replace(/PLACEHOLDER_ROOT/g, isLocal ? '' : 'CEMM-Wiki/');
+    html += sectionTemplate
+        .replace(/PLACEHOLDER_TYPE/g, objectType)
+        .replace(/PLACEHOLDER_ROOT/g, isLocal ? '' : 'CEMM-Wiki/');
 
     // Insert the HTML before the current script tag
     scriptTag.insertAdjacentHTML('beforebegin', html);
