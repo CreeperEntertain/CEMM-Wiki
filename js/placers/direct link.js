@@ -3,8 +3,11 @@
     const htmlRef = scriptTag.dataset.template;
     const objectType = scriptTag.dataset.type;
 
+    const host = window.location.hostname;
+    const isLocal = (host === "localhost" || host === "127.0.0.1");
+
     // Fetch the HTML file (just one, no replacements)
-    const htmlResponse = await fetch(htmlRef);
+    const htmlResponse = await fetch(isLocal ? htmlRef : 'CEMM-Wiki/' + htmlRef);
     const sectionTemplate = await htmlResponse.text();
 
     let html = '';
@@ -15,8 +18,6 @@
     scriptTag.insertAdjacentHTML('beforebegin', html);
 
     // Re-execute any <script> tags inside the inserted HTML
-    const host = window.location.hostname;
-    const isLocal = (host === "localhost" || host === "127.0.0.1");
     for (const oldScript of [...scriptTag.parentElement.querySelectorAll("script[src]")]) {
         if (oldScript === scriptTag) continue;
         const newScript = document.createElement("script");
