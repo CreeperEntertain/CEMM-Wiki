@@ -36,12 +36,14 @@
     transform: translateY(-5px) scale(.9);
 }
 
-.tab-hover > div > h1
+.tab-hover > div > h1,
+.tab-hover > div > h2
 {
     transition: 0.2s;
     margin-left: 0px;
 }
-.tab-hover:hover > div > h1
+.tab-hover:hover > div > h1,
+.tab-hover:hover > div > h2
 {
     margin-left: 30px;
 }

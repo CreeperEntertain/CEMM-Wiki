@@ -12,26 +12,7 @@
     </head>
     <body class="solid-background" style="background-image: url('../../img/small/argilite.png'); background-size:128px; image-rendering: pixelated;">
         <!--Header-->
-        <div class="header-hover" style="position: fixed; top: 0; left: 0; height: fit-content; width: 100vw;">
-            <div style="background-color: white; width: 100%; height: fit-content; display: flex; justify-content: space-between;">
-                <div style="display: flex;">
-                    <a href="../../index.html">
-                        <button class="text-d t-regular header-button" style="border-style: none; cursor: pointer; padding: 20px; font-size: xx-large; font-weight: 200;">
-                            Home
-                        </button>
-                    </a>
-                    <a href="../../index.html">
-                        <button class="text-d t-regular header-button" style="border-style: none; cursor: pointer; padding: 20px; font-size: xx-large; font-weight: 200;">
-                            Mod Download
-                        </button>
-                    </a>
-                </div>
-            </div>
-            <div style="width: 100%; display: flex; justify-content: center;">
-                <div style="background-color: white; height: 25px; width: 51px; border-radius: 0 0 25px 25px; margin-top: -1px;"></div>
-            </div>
-            <div style="height: 80px; width: 100%;"></div>
-        </div>
+        <script src="../../js/placers/direct link.js" data-template="../../html/templates/placed/header.html"></script>
 
         <div style="z-index: -1; margin-top: -300px; width: 100vw; height: 500px; background-image: linear-gradient(to bottom, transparent, #000000F0);"></div>
         <div style="z-index: -10; margin-top: -150px; width: 100vw; height: fit-content; background-color: #000000F0; padding-bottom: 1px;">
@@ -43,20 +24,64 @@
                             Argilite
                         </h1>
                     </div>
-                    <a href="../block list.html" class="tab-hover" style="width: fit-content;">
-                        <div class="solid-background" style="margin-left: -30px; border-radius: 0 30px 30px 0; width: fit-content; padding: 20px; padding-left: 30px; padding-right: 30px; margin-bottom: 20px;">
-                            <h1 class="text" style="font-family: Lexend; font-weight: 200;">
-                                Back
-                            </h1>
+                    <div style="width: fit-content;">
+                        <a href="../block list.html" class="tab-hover" style="width: fit-content;">
+                            <div class="solid-background" style="margin-left: -30px; border-radius: 0 30px 30px 0; width: fit-content; padding: 20px; padding-left: 30px; padding-right: 30px; margin-bottom: 20px;">
+                                <h1 class="text" style="font-family: Lexend; font-weight: 200;">
+                                    Back
+                                </h1>
+                            </div>
+                        </a>
+                    </div>
+                    <div id="content-table" style="margin-bottom: 20px; display: flex; flex-direction: column; gap: 5px; position: absolute; position: sticky; top: 110px;">
+                        <div style="width: fit-content;">
+                            <a href="#" class="tab-hover">
+                                <div class="c3" style="position: relative; height: 30px; width: fit-content; margin-left: -30px; padding: 0px 20px 0px 30px;">
+                                    <div style="position: absolute; height: 0; width: 0; top: 0; right: -15px; border-bottom: 15px solid transparent; border-top: 15px solid #8E94A2; border-left: 15px solid transparent; border-right: 15px solid transparent;"></div>
+                                    <div style="position: absolute; height: 0; width: 0; bottom: 0; right: -15px; border-bottom: 15px solid #8E94A2; border-top: 15px solid transparent; border-left: 15px solid transparent; border-right: 15px solid transparent;"></div>
+                                    <h2 class="text f0" style="font-family: Lexend; font-weight: 200;">
+                                        # Top
+                                    </h2>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                    <div class="c2" style="margin-left: -30px; border-radius: 0 30px 30px 0; width: fit-content; padding: 0px; padding-left: 30px; padding-right: 30px; margin-bottom: 20px;">
+                        <div style="width: fit-content;">
+                            <a href="#description" class="tab-hover">
+                                <div class="c3" style="position: relative; height: 30px; width: fit-content; margin-left: -30px; padding: 0px 20px 0px 30px;">
+                                    <div style="position: absolute; height: 0; width: 0; top: 0; right: -15px; border-bottom: 15px solid transparent; border-top: 15px solid #8E94A2; border-left: 15px solid transparent; border-right: 15px solid transparent;"></div>
+                                    <div style="position: absolute; height: 0; width: 0; bottom: 0; right: -15px; border-bottom: 15px solid #8E94A2; border-top: 15px solid transparent; border-left: 15px solid transparent; border-right: 15px solid transparent;"></div>
+                                    <h2 class="text f0" style="font-family: Lexend; font-weight: 200;">
+                                        # Description
+                                    </h2>
+                                </div>
+                            </a>
+                        </div>
+                        <div style="width: fit-content;">
+                            <a href="#obtaining" class="tab-hover">
+                                <div class="c3" style="position: relative; height: 30px; width: fit-content; margin-left: -30px; padding: 0px 20px 0px 30px;">
+                                    <div style="position: absolute; height: 0; width: 0; top: 0; right: -15px; border-bottom: 15px solid transparent; border-top: 15px solid #8E94A2; border-left: 15px solid transparent; border-right: 15px solid transparent;"></div>
+                                    <div style="position: absolute; height: 0; width: 0; bottom: 0; right: -15px; border-bottom: 15px solid #8E94A2; border-top: 15px solid transparent; border-left: 15px solid transparent; border-right: 15px solid transparent;"></div>
+                                    <h2 class="text f0" style="font-family: Lexend; font-weight: 200;">
+                                        # Obtaining
+                                    </h2>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="c2" id="description" style="margin-left: -30px; border-radius: 0 30px 30px 0; width: fit-content; padding: 0px; padding-left: 30px; padding-right: 30px; margin-bottom: 20px;">
                         <h1 class="text" style="font-family: Lexend; font-weight: 200; margin-left: 0px;">
-                            General Info
+                            Description
                         </h1>
                     </div>
                     <p class="text t-regular">
                         Here's some info text about the block.
+                    </p><div class="c2" id="obtaining" style="margin-left: -30px; border-radius: 0 30px 30px 0; width: fit-content; padding: 0px; padding-left: 30px; padding-right: 30px; margin-bottom: 20px;">
+                        <h1 class="text" style="font-family: Lexend; font-weight: 200; margin-left: 0px;">
+                            Obtaining
+                        </h1>
+                    </div>
+                    <p class="text t-regular">
+                        Here's how you mine it.
                     </p>
                 </div>
     
