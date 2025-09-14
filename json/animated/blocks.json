@@ -1,4 +1,5 @@
 [
+    "Aluminum Construction Material",
     "Arsenic Ore",
     "Baryte Deposit",
     "Bastnaesite Deposit",
@@ -18,5 +19,17 @@
     "Lunarbark Wood",
     "Monazite Deposit",
     "Mountain Quartz Ore",
-    "Niter Deposit"
+    "Niter Deposit",
+    "Osmium Deposit",
+    "Pegmatite Deposit",
+    "Processed Aluminum Construction Material",
+    "Pyrolusite Deposit",
+    "Redstone Ticker",
+    "Smokey Quartz Ore",
+    "Spodumene Deposit",
+    "Sulfur Ore",
+    "Vanadinite Deposit",
+    "Wolframite Deposit",
+    "Xenotime Deposit",
+    "Ytterbium Ore"
 ]
