@@ -47,6 +47,9 @@
 {
     margin-left: 30px;
 }
+.tab-hover.scrolled:not(:hover) > div > h2 {
+    margin-left: -100px;
+}
 
 .button-hover
 {
@@ -56,4 +59,41 @@
 .button-hover:hover
 {
     transform: translateY(-10px);
+}
+
+.opacity-hover
+{
+    transition: 0.2s;
+    opacity: 1;
+}
+.opacity-hover:hover
+{
+    opacity: 1;
+}
+.opacity-hover > div > a > .hashtag
+{
+    transition: 0.2s;
+    padding-left: 0px;
+}
+.opacity-hover:hover > div > a > .hashtag
+{
+    padding-left: 30px;
+}
+.opacity-hover > div > a > .hashtag > div
+{
+    opacity: 1;
+}
+.opacity-hover:hover > div > a > .hashtag > div
+{
+    opacity: 0;
+}
+.opacity-hover > div > a > .text
+{
+    transition: 0.2s ease-in;
+    margin-left: -1000px;
+}
+.opacity-hover:hover > div > a > .text
+{
+    transition: 0.2s ease-out;
+    margin-left: 0px;
 }

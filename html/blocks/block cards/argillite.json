@@ -10,5 +10,22 @@
         "Shadow Strength" : 15,
         "Transparent" : "No",
         "Flammable" : "No"
-    }
+    },
+    {
+        "Generation Height" : "0-256",
+        "Ideal Height" : "0-256",
+        "Biomes" : ["Bauxite Steppes"]
+    },
+    [
+        "Slippery",
+        "Jump Boost",
+        "Speed Increase",
+        "Gravity Affected",
+        "Deals Damage",
+        "Non-Solid",
+        "Climbable",
+        "Energy Related",
+        "Cuttable",
+        "Can Explode"
+    ]
 ]

@@ -1,0 +1,3 @@
+.page-section {
+    scroll-margin-top: var(--scroll-offset, 0px);
+}
