@@ -1,0 +1,14 @@
+[
+    {
+        "Rarity" : "Common",
+        "Renewable" : "No",
+        "Stack Size" : 64,
+        "Tool Level" : 0,
+        "Hardness" : 3,
+        "Blast Resistance" : 6,
+        "Luminosity" : 0,
+        "Shadow Strength" : 15,
+        "Transparent" : "No",
+        "Flammable" : "No"
+    }
+]
