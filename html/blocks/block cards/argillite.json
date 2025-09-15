@@ -1,31 +1,40 @@
 [
     {
-        "Rarity" : "Common",
-        "Renewable" : "No",
-        "Stack Size" : 64,
-        "Tool Level" : 0,
-        "Hardness" : 3,
-        "Blast Resistance" : 6,
-        "Luminosity" : 0,
-        "Shadow Strength" : 15,
-        "Transparent" : "No",
-        "Flammable" : "No"
+        "Basics" :
+        [
+            ["Items.png", "Rarity", "Common"],
+            ["Turn.png", "Renewable?", "No"],
+            ["Items.png", "Stack Size", "64"],
+            ["Pick.png", "Tool Level", "0"],
+            ["Pick.png", "Hardness", "3"],
+            ["Break.png", "Blast Resistance", "6"],
+            ["Light.png", "Luminosity", "0"],
+            ["Shadow.png", "Shadow Strength", "15"],
+            ["Transparent?", "No"],
+            ["Walk Through.png", "Flammable", "No"]
+        ]
     },
     {
-        "Generation Height" : "0-256",
-        "Ideal Height" : "0-256",
-        "Biomes" : ["Bauxite Steppes"]
+        "Generation" :
+        [
+            ["Height.png", "Generation Height", "0-256"],
+            ["Optimal Height.png", "Ideal Height", "0-256"],
+            ["Biome.png", "Biomes", ["Bauxite Steppes"]]
+        ]
     },
-    [
-        "Slippery",
-        "Jump Boost",
-        "Speed Increase",
-        "Gravity Affected",
-        "Deals Damage",
-        "Non-Solid",
-        "Climbable",
-        "Energy Related",
-        "Cuttable",
-        "Can Explode"
-    ]
+    {
+        "Special Properties" :
+        [
+            ["Slip.png", "Slippery"],
+            ["Jump.png", "Jump Boost"],
+            ["Speed.png", "Speed Boost"],
+            ["Fall.png", "Gravity Affected"],
+            ["Damage.png", "Deals Damage"],
+            ["Walk Through.png", "Non-Solid"],
+            ["Ladder.png", "Climbable"],
+            ["Electricity.png", "Energy Related"],
+            ["Cuttable.png", "Cuttable"],
+            ["Explosion.png", "Can Explode"]
+        ]
+    }
 ]
