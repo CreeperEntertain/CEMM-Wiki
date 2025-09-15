@@ -19,7 +19,7 @@
         [
             ["Height.png", "Generation Height", "0-256"],
             ["Optimal Height.png", "Ideal Height", "0-256"],
-            ["Biome.png", "Biomes", ["Bauxite Steppes"]]
+            ["Biome.png", "Biomes", ["Bauxite Steppes", "Bauxite Steppes", "Bauxite Steppes"]]
         ]
     },
     {
