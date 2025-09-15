@@ -56,7 +56,7 @@
     transition: 0.2s;
     transform: translateY(0px);
 }
-.button-hover:hover 
+.button-hover:hover
 {
     transform: translateY(-10px);
 }
