@@ -90,7 +90,7 @@
 .opacity-hover > div > a > .text
 {
     transition: 0.2s ease-in;
-    margin-left: -1000px;
+    margin-left: -200px;
 }
 .opacity-hover:hover > div > a > .text
 {
