@@ -19,6 +19,7 @@
         .replace(/PLACEHOLDER_TYPE/g, objectType)
         .replace(/PLACEHOLDER_ROOT/g, isLocal ? '/' : '/CEMM-Wiki/')
         .replace(/PLACEHOLDER_TEXT/g, displayText)
+        .replace(/PLACEHOLDER_LOWER/g, (displayText || "").toLowerCase())
         .replace(/PLACEHOLDER_LINK/g, pageLink)
         .replace(/PLACEHOLDER_ICON/g, iconLink);
 
