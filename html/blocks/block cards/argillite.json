@@ -2,16 +2,16 @@
     {
         "Basics" :
         [
-            ["Items.png", "Rarity", "Common"],
+            ["Item.png", "Rarity", "Common"],
             ["Turn.png", "Renewable?", "No"],
-            ["Items.png", "Stack Size", "64"],
+            ["Item.png", "Stack Size", "64"],
             ["Pick.png", "Tool Level", "0"],
             ["Pick.png", "Hardness", "3"],
             ["Break.png", "Blast Resistance", "6"],
             ["Light.png", "Luminosity", "0"],
             ["Shadow.png", "Shadow Strength", "15"],
-            ["Transparent?", "No"],
-            ["Walk Through.png", "Flammable", "No"]
+            ["Walk Through.png", "Transparent?", "No"],
+            ["Explosion.png", "Flammable", "No"]
         ]
     },
     {
@@ -19,7 +19,7 @@
         [
             ["Height.png", "Generation Height", "0-256"],
             ["Optimal Height.png", "Ideal Height", "0-256"],
-            ["Biome.png", "Biomes", ["Bauxite Steppes", "Bauxite Steppes", "Bauxite Steppes"]]
+            ["Biome.png", "Biomes", ["Bauxite Steppes"]]
         ]
     },
     {
