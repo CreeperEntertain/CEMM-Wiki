@@ -2,16 +2,16 @@
     {
         "Basics" :
         [
-            ["Item.png", "Rarity", "Common"],
+            ["Shine.png", "Rarity", "Common"],
             ["Turn.png", "Renewable?", "No"],
             ["Item.png", "Stack Size", "64"],
             ["Pick.png", "Tool Level", "0"],
-            ["Pick.png", "Hardness", "3"],
+            ["Hammering.png", "Hardness", "3"],
             ["Break.png", "Blast Resistance", "6"],
             ["Light.png", "Luminosity", "0"],
             ["Shadow.png", "Shadow Strength", "15"],
-            ["Walk Through.png", "Transparent?", "No"],
-            ["Explosion.png", "Flammable", "No"]
+            ["Walk Through.png", "Transparent", "No"],
+            ["Fire.png", "Flammable", "No"]
         ]
     },
     {

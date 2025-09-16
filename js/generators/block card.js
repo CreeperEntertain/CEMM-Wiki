@@ -6,9 +6,9 @@
     const response = await fetch(jsonReference);
     const jsonData = await response.json();
 
-    const titleElement = '<script src="../../js/placers/block card.js" data-template="../../html/templates/generated/block card title.html" data-title="{$TITLE}"></script>';
-    const propertyElement = '<script src="../../js/placers/block card.js" data-template="../../html/templates/generated/block card property.html" data-icon="{$ICON}" data-property="{$PROPERTY}" data-value="{$VALUE}"></script>';
-    const specialPropertyElement = '<script src="../../js/placers/block card.js" data-template="../../html/templates/generated/block card special property.html" data-icon="{$ICON}" data-property="{$SPECIAL_PROPERTY}"></script>';
+    const titleElement = '<script src="../../js/placers/block card.js" data-template="../../html/templates/generated/block cards/title.html" data-title="{$TITLE}"></script>';
+    const propertyElement = '<script src="../../js/placers/block card.js" data-template="../../html/templates/generated/block cards/property.html" data-icon="{$ICON}" data-property="{$PROPERTY}" data-value="{$VALUE}"></script>';
+    const specialPropertyElement = '<script src="../../js/placers/block card.js" data-template="../../html/templates/generated/block cards/special property.html" data-icon="{$ICON}" data-property="{$SPECIAL_PROPERTY}"></script>';
 
     // Fetch the HTML template for sections
     const htmlResponse = await fetch(htmlRef);
