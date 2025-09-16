@@ -55,10 +55,15 @@
 {
     transition: 0.2s;
     transform: translateY(0px);
+    transform: scale(100%);
 }
 .button-hover:hover
 {
     transform: translateY(-10px);
+}
+.button-hover:active
+{
+    transform: scale(98%);
 }
 
 .opacity-hover
