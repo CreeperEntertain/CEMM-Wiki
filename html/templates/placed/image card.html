@@ -7,6 +7,10 @@
     { transition: 0.2s; width: 128px; }
     #PLACEHOLDER_LOWER-image-card-check:checked ~ #PLACEHOLDER_LOWER-image-card-main
     { transition: 0.2s; width: 512px; }
+    #PLACEHOLDER_LOWER-image-card-check:not(:checked) ~ #PLACEHOLDER_LOWER-image-card-main > label > div > div > a
+    { transition: 0.2s; opacity: 0; }
+    #PLACEHOLDER_LOWER-image-card-check:checked ~ #PLACEHOLDER_LOWER-image-card-main > label > div > div > a
+    { transition: 0.2s; opacity: 1; }
     .PLACEHOLDER_LOWER-image-link > div
     { transition: 0.2s; opacity: 0; }
     .PLACEHOLDER_LOWER-image-link:hover > div
