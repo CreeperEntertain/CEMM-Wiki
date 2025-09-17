@@ -44,9 +44,25 @@
     background-image: url('../../img/overlays/Mixed.png');
 }
 
-.gl-s
+.blur-xs
+{
+    backdrop-filter: blur(1px);
+}
+.blur-s
+{
+    backdrop-filter: blur(2px);
+}
+.blur-m
 {
     backdrop-filter: blur(5px);
+}
+.blur-l
+{
+    backdrop-filter: blur(10px);
+}
+.blur-xl
+{
+    backdrop-filter: blur(25px);
 }
 
 .solid-color-g-up
