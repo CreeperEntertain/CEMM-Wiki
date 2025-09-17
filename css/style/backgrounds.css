@@ -21,6 +21,34 @@
     background-image: url('../../img/overlays/Mixed.png');
 }
 
+.solid-background-t
+{
+    background-color: #00000080;
+}
+.c0-t
+{
+    background-color: #13131b80;
+    background-image: url('../../img/overlays/Mixed.png');
+}
+.c1-t
+{
+    background-color: #1f233380;
+}
+.c2-t
+{
+    background-color: #393e5080;
+}
+.c3-t
+{
+    background-color: #8E94A280;
+    background-image: url('../../img/overlays/Mixed.png');
+}
+
+.gl-s
+{
+    backdrop-filter: blur(5px);
+}
+
 .solid-color-g-up
 {
     background: linear-gradient(to top, #00000000, #000000ff);
