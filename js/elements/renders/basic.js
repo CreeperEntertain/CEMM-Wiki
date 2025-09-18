@@ -11,6 +11,7 @@ export class BasicRenderer {
             TITLE: script.getAttribute('title') || '',
             ICON: script.getAttribute('icon') || '',
             NAME: script.getAttribute('name') || '',
+            TEMPLATE: script.getAttribute('template') || '',
             LINK: script.getAttribute('link') || '',
         };
 

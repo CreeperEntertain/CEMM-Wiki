@@ -1,0 +1,6 @@
+[
+    ["Block.png", "Blocks", "html/block list.html"],
+    ["Item.png", "Items", "html/item list.html"],
+    ["Biome.png", "Biomes", "html/biome list.html"],
+    ["Crafting.png", "Recipes", "html/recipe list.html"]
+]

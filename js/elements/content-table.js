@@ -1,5 +1,7 @@
-import { BasicRenderer } from "./renders/basic.js";
+import { ContentTableRenderer } from "./renders/content tables.js";
 export class ContentTable extends HTMLElement {
+    jsonToAwait;
+
     static get observedAttributes() {
         return ['name'];
     }
@@ -8,11 +10,17 @@ export class ContentTable extends HTMLElement {
 
     constructor() {
         super();
-        BasicRenderer.render(this, this.fileToAwait);
+        if(this.hasAttribute('name')){
+            this.jsonToAwait = `content tables/${this.getAttribute('name')}.json`;
+        }
+        ContentTableRenderer.render(this, this.fileToAwait, this.jsonToAwait);
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        BasicRenderer.render(this, this.fileToAwait);
+        if (name === 'name' && newValue) {
+            this.jsonToAwait = `/json/${newValue}.json`;
+        }
+        ContentTableRenderer.render(this, this.fileToAwait, this.jsonToAwait);
     }
 }
 customElements.define("content-table", ContentTable);

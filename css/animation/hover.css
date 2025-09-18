@@ -75,29 +75,29 @@
 {
     opacity: 1;
 }
-.opacity-hover > div > a > .hashtag
+.opacity-hover > content-table-entry > div > a > .hashtag
 {
     transition: 0.2s;
     padding-left: 0px;
 }
-.opacity-hover:hover > div > a > .hashtag
+.opacity-hover:hover > content-table-entry > div > a > .hashtag
 {
     padding-left: 30px;
 }
-.opacity-hover > div > a > .hashtag > div
+.opacity-hover > content-table-entry > div > a > .hashtag > div
 {
     opacity: 1;
 }
-.opacity-hover:hover > div > a > .hashtag > div
+.opacity-hover:hover > content-table-entry > div > a > .hashtag > div
 {
     opacity: 0;
 }
-.opacity-hover > div > a > .text
+.opacity-hover > content-table-entry > div > a > .text
 {
     transition: 0.2s ease-in;
     margin-left: -200px;
 }
-.opacity-hover:hover > div > a > .text
+.opacity-hover:hover > content-table-entry > div > a > .text
 {
     transition: 0.2s ease-out;
     margin-left: 0px;
