@@ -1,7 +1,8 @@
 export class TitleElement extends HTMLElement {
     constructor() {
         super();
-        this.render('/js/elements/containers/title-element');
+        const fileToAwait = '/js/elements/containers/title-element';
+        this.render(fileToAwait);
     }
 
     async render(fileToAwait) {
