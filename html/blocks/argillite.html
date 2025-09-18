@@ -6,28 +6,27 @@
         <title>
             Block Example Page
         </title>
-
+        <script type="module" src="../../js/elements/!init.js"></script>
         <!--Stylesheet Links-->
         <script src="../../js/placers/direct link.js" data-template="../../html/templates/placed/stylesheet links.html"></script>
     </head>
     <body class="solid-background" style="background-image: url('../../img/textures/block/argillite.png'); background-size:128px; image-rendering: pixelated;">
         <!--Header-->
-        <script src="../../js/placers/direct link.js" data-template="../../html/templates/placed/header.html"></script>
+        <header-element></header-element>
         <div style="z-index: -1; margin-top: -300px; width: 100vw; height: 500px; background-image: linear-gradient(to bottom, transparent, #000000F0);"></div>
         <div style="z-index: -10; margin-top: -150px; width: 100vw; background-color: #000000F0; padding-bottom: 1px;">
             <div class="c0" style="width: auto; margin: 30px; margin-top: 150px; padding: 30px; border-radius: 0px 50px 50px 50px; min-width: 340px;">
                 <div style="display: flex; gap: 30px; flex-wrap: wrap;">
                     <!-- Page Contents -->
                     <div style="flex-grow: 1; max-width: calc(100% - 400px); min-width: 340px; margin-bottom: 80px;">
-                        <script src="../../js/placers/direct link.js" data-template="../../html/templates/placed/page body title.html" data-text="Argillite" data-link="../block list.html"></script>
+                        <page-body-title text="Argillite" link="../block list.html"></page-body-title>
                         <!--Table of Contents-->
-                        <script src="../../js/placers/direct link.js" data-template="../../html/templates/placed/content table.html" data-text="argillite"></script>
+                        <content-table name="argillite"></content-table>
                         <!--Description-->
                         <script src="../../js/placers/direct link.js" data-template="entries/baseline.html" data-text="Description" data-link="entries/argillite/description.html"></script>
-                        <title-element></title-element>
                     </div>
                     <!-- Block Card -->
-                    <script src="../../js/placers/block card.js" data-template="../../html/templates/placed/block card.html" data-icon="argillite"></script>
+                    <block-card name="argillite"></block-card>
                 </div>
                 <!--Entries-->
                 <script src="../../js/placers/direct link.js" data-template="entries/baseline.html" data-text="Obtaining" data-link="entries/argillite/obtaining.html"></script>
