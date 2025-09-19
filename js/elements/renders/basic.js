@@ -12,7 +12,7 @@ export class BasicRenderer {
             ICON: script.getAttribute('icon') || '',
             NAME: script.getAttribute('name') || '',
             TEMPLATE: script.getAttribute('template') || '',
-            LINK: script.getAttribute('link') || '',
+            LINK: script.getAttribute('link') || ''
         };
 
         for (const [key, value] of Object.entries(replacements)) {
