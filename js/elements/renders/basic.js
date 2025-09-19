@@ -11,8 +11,8 @@ export class BasicRenderer {
             TITLE: script.getAttribute('title') || '',
             ICON: script.getAttribute('icon') || '',
             NAME: script.getAttribute('name') || '',
-            TEMPLATE: script.getAttribute('template') || '',
-            LINK: script.getAttribute('link') || ''
+            LINK: script.getAttribute('link') || '',
+            TYPE: script.getAttribute('type') || ''
         };
 
         for (const [key, value] of Object.entries(replacements)) {
