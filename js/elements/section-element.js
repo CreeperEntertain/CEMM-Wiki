@@ -1,4 +1,4 @@
-import { SectionElementRenderer } from "./renders/section elements.js";
+import { SectionElementRenderer } from "./renderers/section elements.js";
 export class SectionElement extends HTMLElement {
     static get observedAttributes() {
         ['type']

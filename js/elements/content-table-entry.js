@@ -1,4 +1,4 @@
-import { BasicRenderer } from "./renders/basic.js";
+import { BasicRenderer } from "./renderers/basic.js";
 export class ContentTableEntry extends HTMLElement {
     static get observedAttributes() {
         return ['title', 'link'];

@@ -1,4 +1,4 @@
-import { FooterRenderer } from "./renders/footer.js";
+import { FooterRenderer } from "./renderers/footer.js";
 export class Footer extends HTMLElement {
     static get observedAttributes() {
         return ['type'];

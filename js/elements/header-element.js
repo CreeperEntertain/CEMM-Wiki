@@ -1,4 +1,4 @@
-import { BasicRenderer } from "./renders/basic.js";
+import { BasicRenderer } from "./renderers/basic.js";
 export class Header extends HTMLElement {
     fileToAwait = '/html/templates/placed/header-element.html';
     constructor() {

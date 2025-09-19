@@ -1,4 +1,4 @@
-import { BasicRenderer } from "./renders/basic.js";
+import { BasicRenderer } from "./renderers/basic.js";
 export class BlockCard extends HTMLElement {
     static get observedAttributes() {
         return ['name'];

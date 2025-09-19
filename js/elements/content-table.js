@@ -1,4 +1,4 @@
-import { ContentTableRenderer } from "./renders/content tables.js";
+import { ContentTableRenderer } from "./renderers/content tables.js";
 export class ContentTable extends HTMLElement {
     jsonToAwait;
 
