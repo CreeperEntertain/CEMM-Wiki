@@ -12,7 +12,9 @@ export class BasicRenderer {
             ICON: script.getAttribute('icon') || '',
             NAME: script.getAttribute('name') || '',
             LINK: script.getAttribute('link') || '',
-            TYPE: script.getAttribute('type') || ''
+            TYPE: script.getAttribute('type') || '',
+            LOWER: script.getAttribute('lower') || '',
+            UNDERSCORE: script.getAttribute('underscore') || ''
         };
 
         for (const [key, value] of Object.entries(replacements)) {
