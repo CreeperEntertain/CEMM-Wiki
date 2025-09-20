@@ -16,7 +16,7 @@ export class SectionElementRenderer {
         const animatedJsonResponse = await fetch(isLocal ? animatedJsonToAwait : '/CEMM-Wiki' + animatedJsonToAwait);
         const animatedJson = await animatedJsonResponse.json();
 
-        let listCard = '<list-card type="${TYPE}" title="${TITLE}" underscore="${UNDERSCORE}" lower="${LOWER}"></list-card>';
+        let listCard = '<list-card class="card-hover" type="${TYPE}" title="${TITLE}" underscore="${UNDERSCORE}" lower="${LOWER}"></list-card>';
 
         let insertedHtml = '';
         for (const item of truncatedFirstCharacters)

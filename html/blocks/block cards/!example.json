@@ -23,9 +23,18 @@
         ]
     },
     {
-        "Other" :
+        "Special Properties" :
         [
-            ["Cuttable.png", "Cuttable"]
+            ["Slip.png", "Slippery"],
+            ["Jump.png", "Jump Boost"],
+            ["Speed.png", "Speed Boost"],
+            ["Fall.png", "Gravity Affected"],
+            ["Damage.png", "Deals Damage"],
+            ["Walk Through.png", "Non-Solid"],
+            ["Ladder.png", "Climbable"],
+            ["Electricity.png", "Energy Related"],
+            ["Cuttable.png", "Cuttable"],
+            ["Explosion.png", "Can Explode"]
         ]
     }
 ]

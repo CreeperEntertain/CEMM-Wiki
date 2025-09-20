@@ -9,6 +9,7 @@ import { ListCard } from "./list-card.js";
 import { BlockCardTitle } from "./block-card-title.js";
 import { BlockCardValue } from "./block-card-value.js";
 import { BlockCardSpecialProperty } from "./block-card-special-property.js";
+import { PageLink } from "./page-link.js";
 
 // Generators
 import { ContentTable } from "./content-table.js";

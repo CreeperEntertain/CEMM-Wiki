@@ -2,7 +2,9 @@
     {
         "Basics" :
         [
-            ["Shine.png", "Rarity", "Common"]
+            ["Shine.png", "Rarity", "Common"],
+            ["Turn.png", "Renewable?", "No"],
+            ["Item.png", "Stack Size", "64"]
         ]
     }
 ]
