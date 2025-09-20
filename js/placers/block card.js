@@ -6,7 +6,7 @@
     const icon = scriptTag.dataset.icon;
     const value = scriptTag.dataset.value;
 
-    const valueElement = '<script src="../../js/placers/direct link.js" data-template="../../html/templates/generated/block cards/value.html" data-text="{$VALUE}"></script>';
+    const valueElement = '<block-card-value text="{$VALUE}"></block-card-value>';
 
     const host = window.location.hostname;
     const isLocal = (host === "localhost" || host === "127.0.0.1");

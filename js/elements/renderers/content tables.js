@@ -7,7 +7,6 @@ export class ContentTableRenderer {
         let html = await response.text();
         const contentTableRaw = await fetch(jsonToAwait);
         let contentTable = await contentTableRaw.json();
-        console.log(contentTable);
 
         const contentTableEntry = '<content-table-entry title="${TITLE}" link="#${LINK}"></content-table-entry>';
 

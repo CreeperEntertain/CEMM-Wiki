@@ -1,4 +1,4 @@
-export class BasicRenderer {
+export class BlockCardPropertyRenderer {
     static async render(script, fileToAwait) {
         const host = window.location.hostname;
         const isLocal = (host === "localhost" || host === "127.0.0.1");
@@ -7,14 +7,7 @@ export class BasicRenderer {
         let html = await response.text();
 
         const replacements = {
-            TEXT: script.getAttribute('text') || '',
-            TITLE: script.getAttribute('title') || '',
             ICON: script.getAttribute('icon') || '',
-            NAME: script.getAttribute('name') || '',
-            LINK: script.getAttribute('link') || '',
-            TYPE: script.getAttribute('type') || '',
-            LOWER: script.getAttribute('lower') || '',
-            UNDERSCORE: script.getAttribute('underscore') || '',
             PROPERTY: script.getAttribute('property') || ''
         };
 
@@ -25,6 +18,14 @@ export class BasicRenderer {
 
         html = html.replace(/\$\{ROOT\}/g, isLocal ? '/' : '/CEMM-Wiki/');
         
-        script.innerHTML = html;
+        const htmlBlock = '<block-card-value text="${TEXT}"></block-card-value>';
+        let jsonArray = JSON.parse(script.getAttribute('json-array').replace(/'/g, '"'));
+        let insertedHtml = '';
+        for (const item of jsonArray)
+        {
+            insertedHtml += htmlBlock.replace(/\$\{TEXT\}/g, item) + '\n';
+        }
+        
+        script.innerHTML = html.replace(/\$\{INSERT\}/g, insertedHtml);
     }
 }

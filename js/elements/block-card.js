@@ -1,18 +1,18 @@
-import { BasicRenderer } from "./renderers/basic.js";
+import { BlockCardRenderer } from "./renderers/block card.js";
 export class BlockCard extends HTMLElement {
     static get observedAttributes() {
-        return ['name'];
+        return ['type', 'name'];
     }
 
     fileToAwait = '/html/templates/placed/block-card.html';
 
     constructor() {
         super();
-        BasicRenderer.render(this, this.fileToAwait);
+        BlockCardRenderer.render(this, this.fileToAwait);
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        BasicRenderer.render(this, this.fileToAwait);
+        BlockCardRenderer.render(this, this.fileToAwait);
     }
 }
 customElements.define("block-card", BlockCard);

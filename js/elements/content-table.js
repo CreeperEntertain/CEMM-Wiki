@@ -11,14 +11,16 @@ export class ContentTable extends HTMLElement {
     constructor() {
         super();
         if(this.hasAttribute('name')){
-            this.jsonToAwait = `content tables/${this.getAttribute('name')}.json`;
+            let name = this.getAttribute('name')
+            this.jsonToAwait = 'content tables/' + name + '.json';
         }
         ContentTableRenderer.render(this, this.fileToAwait, this.jsonToAwait);
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
         if (name === 'name' && newValue) {
-            this.jsonToAwait = `/json/${newValue}.json`;
+            let name = this.getAttribute('name')
+            this.jsonToAwait = 'content tables/' + name + '.json';
         }
         ContentTableRenderer.render(this, this.fileToAwait, this.jsonToAwait);
     }
