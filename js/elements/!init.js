@@ -10,6 +10,7 @@ import { BlockCardTitle } from "./block-card-title.js";
 import { BlockCardValue } from "./block-card-value.js";
 import { BlockCardSpecialProperty } from "./block-card-special-property.js";
 import { PageLink } from "./page-link.js";
+import { EntryHtml } from "./entry-html.js";
 
 // Generators
 import { ContentTable } from "./content-table.js";
@@ -18,3 +19,5 @@ import { Footer } from "./footer-element.js";
 import { SectionElement } from "./section-element.js";
 import { BlockCardProperty } from "./block-card-property.js";
 import { BlockCard } from "./block-card.js";
+import { Entries } from "./entry-elements.js";
+import { FirstEntry } from "./first-entry.js";
