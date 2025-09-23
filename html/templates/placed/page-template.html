@@ -1,0 +1,24 @@
+<div class="solid-background page-body" style="height: fit-content; width: 100%; background-image: url('${ROOT}img/textures/${SHORTTYPE}/${NAMELOWER}.png');">
+    <!--Header-->
+    <header-element></header-element>
+    <div class="background-gradient"></div>
+    <div class="main-wrapper">
+        <div class="c0 outer-wrapper">
+            <div class="inner-wrapper">
+                <!-- Page Contents -->
+                <div class="content-wrapper">
+                    <page-body-title text="${NAME}" link="../${SHORTTYPE} list.html"></page-body-title>
+                    <!--Table of Contents-->
+                    <content-table name="${NAMELOWER}"></content-table>
+                    <!--Description-->
+                    <first-entry type="${TYPE}" name="${NAMELOWER}"></first-entry>
+                </div>
+                <!-- Block Card -->
+                <block-card name="${NAMELOWER}" type="${TYPE}"></block-card>
+            </div>
+            <!--Entries-->
+            <entry-elements name="${NAME}" type="${TYPE}"></entry-elements>
+        </div>
+    </div>
+    <script src="${ROOT}js/layout/scroll offset.js" data-type="${TYPE}" data-name="${NAMELOWER}"></script>
+</div>

@@ -11,6 +11,7 @@ import { BlockCardValue } from "./block-card-value.js";
 import { BlockCardSpecialProperty } from "./block-card-special-property.js";
 import { PageLink } from "./page-link.js";
 import { EntryHtml } from "./entry-html.js";
+import { PageTemplate } from "./page-template.js";
 
 // Generators
 import { ContentTable } from "./content-table.js";

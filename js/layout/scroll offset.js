@@ -12,7 +12,7 @@ async function setScrollOffset() {
         const count = data.length;
 
         // calculate your offset (example: 100px per item)
-        const offset = (count + 1) * 35;
+        const offset = (count + 1) * 35 + 125;
 
         // set it as a CSS variable globally
         document.documentElement.style.setProperty("--scroll-offset", offset + "px");
