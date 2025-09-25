@@ -6,7 +6,7 @@ export class FirstEntryRenderer {
 
         const type = script.getAttribute('type');
         const name = script.getAttribute('name');
-        const jsonToAwait = root + '/html/' + type + '/content tables/' + name + '.json';
+        const jsonToAwait = '/html/' + type + '/content tables/' + name + '.json';
 
         const htmlResponse = await fetch(root + fileToAwait);
         let html = await htmlResponse.text();
